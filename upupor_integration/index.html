@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- https://www.jsdelivr.com/package/npm/vditor 在这里找到最新的版本,看一下是否都离线下来 -->
+    <!-- ⚠️生产环境请指定版本号，如 https://cdn.jsdelivr.net/npm/vditor@x.x.x/dist... -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vditor@3.8.10/dist/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vditor@3.8.10/dist/index.min.js"></script>
+    <title>Vditor集成测试</title>
+</head>
+<body>
+    <h1>集成Vditor</h1>
+    <a href="https://ld246.com/article/1549638745630#options-counter">设置文档</a>
+    <div id="vditor"></div>
+    <script>
+        // 支持的方法 https://ld246.com/article/1549638745630#methods
+        window.onload = function() {
+            var vditor = new Vditor('vditor',{
+                // 统计字符数
+                counter:{
+                    enable: true
+                },
+                // 图标风格
+                icon: 'material',
+                // 工具栏配置
+                toolbarConfig:{
+                    pin: true
+                },
+                // 初始化是否显示大纲
+                outline:{
+                    enable: true,
+                    position: 'right'
+                }
+            });
+            document.getElementById('vditor').append(vditor);
+        }
+        // static methods 不需要进行编辑操作时，仅需引入 method.min.js 后如下直接调用
+        // https://ld246.com/article/1549638745630#static-methods 做展示使用
+    </script>
+</body>
+</html>
