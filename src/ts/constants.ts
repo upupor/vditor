@@ -26,7 +26,9 @@ export abstract class Constants {
         "swift", "ini", "typescript", "vbnet", "yaml",
         "ada", "clojure", "dart", "erb", "fortran", "gradle", "haskell", "julia", "julia-repl", "lisp", "matlab",
         "pgsql", "powershell", "sql_more", "stata", "cmake", "mathematica"];
-    public static readonly CDN = `https://cdn.jsdelivr.net/npm/vditor@${VDITOR_VERSION}`;
+    // public static readonly CDN = `https://cdn.jsdelivr.net/npm/vditor@${VDITOR_VERSION}`;
+    // 在static目录下新建/plugins/vditor文件夹,将dist目录复制进去
+    public static readonly CDN = '/plugins/vditor';
     public static readonly MARKDOWN_OPTIONS = {
         autoSpace: false,
         codeBlockPreview: true,
